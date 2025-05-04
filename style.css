@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d') no-repeat center center fixed;
+  background-size: cover;
+  color: #ffffff;
+  animation: fadeInBody 1.5s ease-in-out;
+}
+
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+aside {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  height: 100vh;
+  overflow-y: auto;
+  animation: slideIn 1s ease-out;
+}
+
+main {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 40px;
+  overflow-y: auto;
+  animation: fadeInMain 1s ease-in;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInMain {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+h1 {
+  color: #1e90ff;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.aside-left {
+  border-right: 2px solid #444;
+}
+
+.aside-right {
+  border-left: 2px solid #444;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #222;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  aside, main {
+    height: auto;
+    padding: 20px;
+  }
+
+  .aside-left, .aside-right {
+    border: none;
+  }
+}
